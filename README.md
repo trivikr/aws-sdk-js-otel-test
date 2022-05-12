@@ -38,6 +38,10 @@ Refer to the npm package for custom instrumentation options which can be passed.
 
 ### v2
 
+<details>
+<summary>yarn instrument:v2</summary>
+
+
 ```console
 $ yarn instrument:v2
 {
@@ -69,7 +73,12 @@ $ yarn instrument:v2
 }
 ```
 
+</details>
+
 ### v3
+
+<details>
+<summary>yarn instrument:v3</summary>
 
 ```console
 $ yarn instrument:v3
@@ -96,5 +105,7 @@ $ yarn instrument:v3
   events: []
 }
 ```
+
+</details>
 
 [instrumentation-aws-sdk]: https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk
