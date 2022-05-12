@@ -1,6 +1,10 @@
 # aws-sdk-js-otel-test
 
-Testing OpenTelemetry instrumentation for AWS SDK for JavaScript
+This sample shows how to use [@opentelemetry/instrumentation-aws-sdk][instrumentation-aws-sdk]
+to instrument listTables call on DynamoDB client in AWS SDK for JavaScript.
+
+The example exports spans data to `Console`. You can also export it to [Jaeger][jaegertracing]
+by setting `JAEGER_ENABLED` environment variable.
 
 ## Prerequisites
 
@@ -28,6 +32,7 @@ Complete the following tasks:
     [default]
     region = us-west-2
     ```
+- (Optional) Setup [Jaeger Tracing][jaeger-getting-started]: needs to be running on `localhost` port `16686`.
 
 ## Setup
 
@@ -41,17 +46,16 @@ Refer to the npm package for custom instrumentation options which can be passed.
 <details>
 <summary>yarn instrument:v2</summary>
 
-
 ```console
 $ yarn instrument:v2
 {
-  traceId: 'c96109ff523f6a7329f0bd65eec2892a',
+  traceId: '5cdc3ef6df6feafd083ee31780eaf2af',
   parentId: undefined,
   name: 'DynamoDB.ListTables',
-  id: '9447373ca2e94fbb',
+  id: 'daebdb25fd06eebd',
   kind: 2,
-  timestamp: 1652378759628002,
-  duration: 355717,
+  timestamp: 1652398876357628,
+  duration: 165648,
   attributes: {
     'aws.operation': 'listTables',
     'aws.signature.version': 'v4',
@@ -65,13 +69,20 @@ $ yarn instrument:v2
     'db.system': 'dynamodb',
     'db.operation': 'ListTables',
     'db.statement': '{}',
-    'aws.request.id': 'CHET3R0PV7TGOKSGL635TCJA5FVV4KQNSO5AEMVJF66Q9ASUAAJG',
+    'aws.request.id': 'M76TSMKB4MKBEAPTS5SAG2552FVV4KQNSO5AEMVJF66Q9ASUAAJG',
     'http.status_code': 200
   },
   status: { code: 0 },
   events: []
 }
 ```
+
+</details>
+
+<details>
+<summary>Jaeger Tracing Screenshot (v2)</summary>
+
+![Jaeger Tracing for AWS SDK for JavaScript (v2)](img/jaeger-exporter-v2.png?raw=true)
 
 </details>
 
@@ -83,13 +94,13 @@ $ yarn instrument:v2
 ```console
 $ yarn instrument:v3
 {
-  traceId: '56b077b3ff6aaf8c2b33eb056315636e',
+  traceId: '8667843daae9aa29ee07d5853d234ef3',
   parentId: undefined,
   name: 'DynamoDB.ListTables',
-  id: 'e0e3bdd16faaf834',
+  id: 'a0de3f91383e0d71',
   kind: 2,
-  timestamp: 1652379082829773,
-  duration: 355633,
+  timestamp: 1652398963098096,
+  duration: 166117,
   attributes: {
     'rpc.system': 'aws-api',
     'rpc.method': 'ListTables',
@@ -98,7 +109,7 @@ $ yarn instrument:v3
     'db.operation': 'ListTables',
     'db.statement': '{}',
     'aws.region': 'us-west-2',
-    'aws.request.id': 'BUKTIJGGFT96U2BBOLDR0CE1KRVV4KQNSO5AEMVJF66Q9ASUAAJG',
+    'aws.request.id': 'S7HO96KJSTPJVCCCA6UMB1DU13VV4KQNSO5AEMVJF66Q9ASUAAJG',
     'http.status_code': 200
   },
   status: { code: 0 },
@@ -108,4 +119,13 @@ $ yarn instrument:v3
 
 </details>
 
+<details>
+<summary>Jaeger Tracing Screenshot (v3)</summary>
+
+![Jaeger Tracing for AWS SDK for JavaScript (v3)](img/jaeger-exporter-v3.png?raw=true)
+
+</details>
+
 [instrumentation-aws-sdk]: https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk
+[jaegertracing]: https://www.jaegertracing.io
+[jaeger-getting-started]: https://www.jaegertracing.io/docs/latest/getting-started/
