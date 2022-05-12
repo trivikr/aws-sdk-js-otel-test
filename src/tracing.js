@@ -1,4 +1,8 @@
-import { BasicTracerProvider, ConsoleSpanExporter, SimpleSpanProcessor } from "@opentelemetry/sdk-trace-base";
+import {
+  BasicTracerProvider,
+  ConsoleSpanExporter,
+  SimpleSpanProcessor,
+} from "@opentelemetry/sdk-trace-base";
 import { AwsInstrumentation } from "@opentelemetry/instrumentation-aws-sdk";
 
 const provider = new BasicTracerProvider({
