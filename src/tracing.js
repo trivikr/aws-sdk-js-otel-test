@@ -1,11 +1,11 @@
+import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node";
 import {
-  BasicTracerProvider,
   ConsoleSpanExporter,
   SimpleSpanProcessor,
 } from "@opentelemetry/sdk-trace-base";
 import { AwsInstrumentation } from "@opentelemetry/instrumentation-aws-sdk";
 
-const provider = new BasicTracerProvider({
+const provider = new NodeTracerProvider({
   instrumentations: [new AwsInstrumentation({})],
 });
 
