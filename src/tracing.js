@@ -1,8 +1,7 @@
-const { NodeTracerProvider } = require("@opentelemetry/sdk-trace-node");
-const { ConsoleSpanExporter, SimpleSpanProcessor } = require("@opentelemetry/sdk-trace-base");
+const { BasicTracerProvider, ConsoleSpanExporter, SimpleSpanProcessor } = require("@opentelemetry/sdk-trace-base");
 const { AwsInstrumentation } = require("@opentelemetry/instrumentation-aws-sdk");
 
-const provider = new NodeTracerProvider({
+const provider = new BasicTracerProvider({
   instrumentations: [new AwsInstrumentation({})],
 });
 
