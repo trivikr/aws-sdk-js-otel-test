@@ -15,5 +15,6 @@
     "@opentelemetry/sdk-trace-base": "1.2.0",
     "aws-sdk": "2.1133.0"
   },
+  "type": "module",
   "packageManager": "yarn@3.2.0"
 }

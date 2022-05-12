@@ -1,7 +1,5 @@
-const AWS = require("aws-sdk");
+import "./tracing.js";
+import AWS from "aws-sdk";
 
 const client = new AWS.DynamoDB({ region: "us-west-2" });
-client
-  .listTables({})
-  .promise()
-  .then(() => {});
+await client.listTables({}).promise();
