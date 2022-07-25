@@ -80,9 +80,9 @@ $ yarn instrument:v2
 </details>
 
 <details>
-<summary>Jaeger Tracing Screenshot (v2)</summary>
+<summary>Jaeger Span Screenshot (v2)</summary>
 
-![Jaeger Tracing for AWS SDK for JavaScript (v2)](img/jaeger-exporter-v2.png?raw=true)
+![Jaeger Span for AWS SDK for JavaScript (v2)](img/jaeger-span-v2.png?raw=true)
 
 </details>
 
@@ -120,9 +120,18 @@ $ yarn instrument:v3
 </details>
 
 <details>
-<summary>Jaeger Tracing Screenshot (v3)</summary>
+<summary>Jaeger Span Screenshot (v3)</summary>
 
-![Jaeger Tracing for AWS SDK for JavaScript (v3)](img/jaeger-exporter-v3.png?raw=true)
+![Jaeger Span for AWS SDK for JavaScript (v3)](img/jaeger-span-v3.png?raw=true)
+
+</details>
+
+## Screenshots
+
+<details>
+<summary>Jaeger Traces when operation is called multiple times</summary>
+
+![Jaeger Traces for AWS SDK for JavaScript](img/jaeger-traces.png?raw=true)
 
 </details>
 
