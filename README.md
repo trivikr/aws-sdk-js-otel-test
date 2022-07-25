@@ -113,7 +113,7 @@ $ yarn instrument:v3
     'http.status_code': 200
   },
   status: { code: 0 },
-  events: []
+  events: [ { name: 'name', attributes: [Object], time: [Array] } ]
 }
 ```
 
