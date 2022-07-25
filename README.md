@@ -73,7 +73,8 @@ $ yarn instrument:v2
     'http.status_code': 200
   },
   status: { code: 0 },
-  events: []
+  events: [],
+  links: []
 }
 ```
 
@@ -113,7 +114,8 @@ $ yarn instrument:v3
     'http.status_code': 200
   },
   status: { code: 0 },
-  events: [ { name: 'name', attributes: [Object], time: [Array] } ]
+  events: [],
+  links: []
 }
 ```
 
