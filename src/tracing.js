@@ -5,11 +5,11 @@ import {
   ConsoleSpanExporter,
   SimpleSpanProcessor,
 } from "@opentelemetry/sdk-trace-base";
-import { SemanticResourceAttributes } from "@opentelemetry/semantic-conventions";
+import { ATTR_SERVICE_NAME } from "@opentelemetry/semantic-conventions";
 
 const provider = new NodeTracerProvider({
   resource: new Resource({
-    [SemanticResourceAttributes.SERVICE_NAME]: "test-aws-sdk",
+    [ATTR_SERVICE_NAME]: "test-aws-sdk",
   }),
   instrumentations: [new AwsInstrumentation({})],
 });
