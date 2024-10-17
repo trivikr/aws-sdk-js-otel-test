@@ -19,7 +19,7 @@
     "@opentelemetry/semantic-conventions": "1.27.0"
   },
   "devDependencies": {
-    "prettier": "3.3.3"
+    "@biomejs/biome": "1.9.3"
   },
   "type": "module",
   "devEngines": {
