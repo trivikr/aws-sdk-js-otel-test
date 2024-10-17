@@ -14,6 +14,7 @@ Complete the following tasks:
   1. Install [nvm](https://github.com/nvm-sh/nvm#installation-and-update).
   1. Use node v22.x.x by running `nvm use` or `nvm use 22` in a terminal window.
   1. Verify that node is installed by running `node -v` in a terminal window and confirm that it shows the latest version of `v22`, such as `v22.10.0`).
+- Run `npm install` to install the dependencies.
 - If you don't have an AWS account, [create one](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
   - If you're an Amazon employee, see the internal wiki for creating an AWS account.
 - Install the [AWS CLI](https://aws.amazon.com/cli/).
@@ -45,23 +46,37 @@ Refer to the npm package for custom instrumentation options which can be passed.
 ```console
 $ node --run instrument
 {
-  traceId: 'c0b91045ade7f4e73dd554a134c74349',
+  resource: {
+    attributes: {
+      'service.name': 'test-aws-sdk',
+      'telemetry.sdk.language': 'nodejs',
+      'telemetry.sdk.name': 'opentelemetry',
+      'telemetry.sdk.version': '1.26.0'
+    }
+  },
+  instrumentationScope: {
+    name: '@opentelemetry/instrumentation-aws-sdk',
+    version: '0.44.0',
+    schemaUrl: undefined
+  },
+  traceId: 'ff028d034969fc05c6e47ee1eaf2faca',
   parentId: undefined,
+  traceState: undefined,
   name: 'DynamoDB.ListTables',
-  id: 'fca11b601ed098ae',
+  id: 'ca2f4591b4b974d9',
   kind: 2,
-  timestamp: 1729186917127480,
-  duration: 131927,
+  timestamp: 1729188000802000,
+  duration: 116957.333,
   attributes: {
     'rpc.system': 'aws-api',
     'rpc.method': 'ListTables',
     'rpc.service': 'DynamoDB',
     'db.system': 'dynamodb',
     'db.operation': 'ListTables',
-    'db.statement': '{}',
     'aws.region': 'us-west-2',
-    'aws.request.id': 'GNI4VJ1CTLQSMU14H1PSCSDLGBVV4KQNSO5AEMVJF66Q9ASUAAJG',
-    'http.status_code': 200
+    'aws.request.id': 'NI9DR2PE921C79HS5U5QSOHM2VVV4KQNSO5AEMVJF66Q9ASUAAJG',
+    'http.status_code': 200,
+    'aws.dynamodb.table_count': 20
   },
   status: { code: 0 },
   events: [],
