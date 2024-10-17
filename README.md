@@ -41,35 +41,28 @@ to instrument listTables call on DynamoDB client.
 
 Refer to the npm package for custom instrumentation options which can be passed.
 
-### v2
-
 <details>
-<summary>yarn instrument:v2</summary>
+<summary>yarn instrument</summary>
 
 ```console
-$ yarn instrument:v2
+$ yarn instrument
 {
-  traceId: '5cdc3ef6df6feafd083ee31780eaf2af',
+  traceId: 'c0b91045ade7f4e73dd554a134c74349',
   parentId: undefined,
   name: 'DynamoDB.ListTables',
-  id: 'daebdb25fd06eebd',
+  id: 'fca11b601ed098ae',
   kind: 2,
-  timestamp: 1652398876357628,
-  duration: 165648,
+  timestamp: 1729186917127480,
+  duration: 131927,
   attributes: {
-    'aws.operation': 'listTables',
-    'aws.signature.version': 'v4',
-    'aws.service.api': 'DynamoDB',
-    'aws.service.identifier': 'dynamodb',
-    'aws.service.name': 'DynamoDB',
     'rpc.system': 'aws-api',
     'rpc.method': 'ListTables',
     'rpc.service': 'DynamoDB',
-    'aws.region': 'us-west-2',
     'db.system': 'dynamodb',
     'db.operation': 'ListTables',
     'db.statement': '{}',
-    'aws.request.id': 'M76TSMKB4MKBEAPTS5SAG2552FVV4KQNSO5AEMVJF66Q9ASUAAJG',
+    'aws.region': 'us-west-2',
+    'aws.request.id': 'GNI4VJ1CTLQSMU14H1PSCSDLGBVV4KQNSO5AEMVJF66Q9ASUAAJG',
     'http.status_code': 200
   },
   status: { code: 0 },
@@ -81,52 +74,13 @@ $ yarn instrument:v2
 </details>
 
 <details>
-<summary>Jaeger Span Screenshot (v2)</summary>
+<summary>Jaeger Span Screenshot</summary>
 
-![Jaeger Span for AWS SDK for JavaScript (v2)](img/jaeger-span-v2.png?raw=true)
-
-</details>
-
-### v3
-
-<details>
-<summary>yarn instrument:v3</summary>
-
-```console
-$ yarn instrument:v3
-{
-  traceId: '8667843daae9aa29ee07d5853d234ef3',
-  parentId: undefined,
-  name: 'DynamoDB.ListTables',
-  id: 'a0de3f91383e0d71',
-  kind: 2,
-  timestamp: 1652398963098096,
-  duration: 166117,
-  attributes: {
-    'rpc.system': 'aws-api',
-    'rpc.method': 'ListTables',
-    'rpc.service': 'DynamoDB',
-    'db.system': 'dynamodb',
-    'db.operation': 'ListTables',
-    'db.statement': '{}',
-    'aws.region': 'us-west-2',
-    'aws.request.id': 'S7HO96KJSTPJVCCCA6UMB1DU13VV4KQNSO5AEMVJF66Q9ASUAAJG',
-    'http.status_code': 200
-  },
-  status: { code: 0 },
-  events: [],
-  links: []
-}
-```
+![Jaeger Span for AWS SDK for JavaScript](img/jaeger-span.png?raw=true)
 
 </details>
 
-<details>
-<summary>Jaeger Span Screenshot (v3)</summary>
-
-![Jaeger Span for AWS SDK for JavaScript (v3)](img/jaeger-span-v3.png?raw=true)
-
-</details>
+For JS SDK v2, pleas refer to the [v2][v2] branch.
 
 ## Screenshots
 
@@ -140,3 +94,4 @@ $ yarn instrument:v3
 [instrumentation-aws-sdk]: https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk
 [jaegertracing]: https://www.jaegertracing.io
 [jaeger-getting-started]: https://www.jaegertracing.io/docs/latest/getting-started/
+[v2]: https://github.com/trivikr/aws-sdk-js-otel-test/tree/v2

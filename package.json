@@ -6,8 +6,7 @@
   "author": "Kamat, Trivikram <trivikr.dev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "instrument:v2": "node src/index.v2.js",
-    "instrument:v3": "node src/index.v3.js"
+    "instrument": "node src/index.js"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "3.131.0",
@@ -17,8 +16,7 @@
     "@opentelemetry/resources": "1.4.0",
     "@opentelemetry/sdk-trace-base": "1.4.0",
     "@opentelemetry/sdk-trace-node": "1.4.0",
-    "@opentelemetry/semantic-conventions": "1.4.0",
-    "aws-sdk": "2.1181.0"
+    "@opentelemetry/semantic-conventions": "1.4.0"
   },
   "devDependencies": {
     "prettier": "2.6.2"
