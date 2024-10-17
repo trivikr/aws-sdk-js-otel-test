@@ -14,8 +14,6 @@ Complete the following tasks:
   1. Install [nvm](https://github.com/nvm-sh/nvm#installation-and-update).
   1. Use node v22.x.x by running `nvm use` or `nvm use 22` in a terminal window.
   1. Verify that node is installed by running `node -v` in a terminal window and confirm that it shows the latest version of `v22`, such as `v22.10.0`).
-- Enable corepack by running `corepack enable`.
-- Install dependencies by running `yarn`.
 - If you don't have an AWS account, [create one](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
   - If you're an Amazon employee, see the internal wiki for creating an AWS account.
 - Install the [AWS CLI](https://aws.amazon.com/cli/).
@@ -42,10 +40,10 @@ to instrument listTables call on DynamoDB client.
 Refer to the npm package for custom instrumentation options which can be passed.
 
 <details>
-<summary>yarn instrument</summary>
+<summary>node --run instrument</summary>
 
 ```console
-$ yarn instrument
+$ node --run instrument
 {
   traceId: 'c0b91045ade7f4e73dd554a134c74349',
   parentId: undefined,
