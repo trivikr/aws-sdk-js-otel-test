@@ -12,8 +12,8 @@ Complete the following tasks:
 
 - Install **Node.js** by following these steps:
   1. Install [nvm](https://github.com/nvm-sh/nvm#installation-and-update).
-  1. Use node v16.x.x by running `nvm use` or `nvm use 16` in a terminal window.
-  1. Verify that node is installed by running `node -v` in a terminal window and confirm that it shows the latest version of `v16`, such as `v16.15.0`).
+  1. Use node v22.x.x by running `nvm use` or `nvm use 22` in a terminal window.
+  1. Verify that node is installed by running `node -v` in a terminal window and confirm that it shows the latest version of `v22`, such as `v22.10.0`).
 - Enable corepack by running `corepack enable`.
 - Install dependencies by running `yarn`.
 - If you don't have an AWS account, [create one](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
