@@ -12,10 +12,9 @@ Complete the following tasks:
 
 - Install **Node.js** by following these steps:
   1. Install [nvm](https://github.com/nvm-sh/nvm#installation-and-update).
-  1. Use node v16.x.x by running `nvm use` or `nvm use 16` in a terminal window.
-  1. Verify that node is installed by running `node -v` in a terminal window and confirm that it shows the latest version of `v16`, such as `v16.15.0`).
-- Enable corepack by running `corepack enable`.
-- Install dependencies by running `yarn`.
+  1. Use node v22.x.x by running `nvm use` or `nvm use 22` in a terminal window.
+  1. Verify that node is installed by running `node -v` in a terminal window and confirm that it shows the latest version of `v22`, such as `v22.10.0`).
+- Run `npm install` to install the dependencies.
 - If you don't have an AWS account, [create one](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
   - If you're an Amazon employee, see the internal wiki for creating an AWS account.
 - Install the [AWS CLI](https://aws.amazon.com/cli/).
@@ -41,36 +40,43 @@ to instrument listTables call on DynamoDB client.
 
 Refer to the npm package for custom instrumentation options which can be passed.
 
-### v2
-
 <details>
-<summary>yarn instrument:v2</summary>
+<summary>node --run instrument</summary>
 
 ```console
-$ yarn instrument:v2
+$ node --run instrument
 {
-  traceId: '5cdc3ef6df6feafd083ee31780eaf2af',
+  resource: {
+    attributes: {
+      'service.name': 'test-aws-sdk',
+      'telemetry.sdk.language': 'nodejs',
+      'telemetry.sdk.name': 'opentelemetry',
+      'telemetry.sdk.version': '1.26.0'
+    }
+  },
+  instrumentationScope: {
+    name: '@opentelemetry/instrumentation-aws-sdk',
+    version: '0.44.0',
+    schemaUrl: undefined
+  },
+  traceId: 'ff028d034969fc05c6e47ee1eaf2faca',
   parentId: undefined,
+  traceState: undefined,
   name: 'DynamoDB.ListTables',
-  id: 'daebdb25fd06eebd',
+  id: 'ca2f4591b4b974d9',
   kind: 2,
-  timestamp: 1652398876357628,
-  duration: 165648,
+  timestamp: 1729188000802000,
+  duration: 116957.333,
   attributes: {
-    'aws.operation': 'listTables',
-    'aws.signature.version': 'v4',
-    'aws.service.api': 'DynamoDB',
-    'aws.service.identifier': 'dynamodb',
-    'aws.service.name': 'DynamoDB',
     'rpc.system': 'aws-api',
     'rpc.method': 'ListTables',
     'rpc.service': 'DynamoDB',
-    'aws.region': 'us-west-2',
     'db.system': 'dynamodb',
     'db.operation': 'ListTables',
-    'db.statement': '{}',
-    'aws.request.id': 'M76TSMKB4MKBEAPTS5SAG2552FVV4KQNSO5AEMVJF66Q9ASUAAJG',
-    'http.status_code': 200
+    'aws.region': 'us-west-2',
+    'aws.request.id': 'NI9DR2PE921C79HS5U5QSOHM2VVV4KQNSO5AEMVJF66Q9ASUAAJG',
+    'http.status_code': 200,
+    'aws.dynamodb.table_count': 20
   },
   status: { code: 0 },
   events: [],
@@ -81,52 +87,13 @@ $ yarn instrument:v2
 </details>
 
 <details>
-<summary>Jaeger Span Screenshot (v2)</summary>
+<summary>Jaeger Span Screenshot</summary>
 
-![Jaeger Span for AWS SDK for JavaScript (v2)](img/jaeger-span-v2.png?raw=true)
-
-</details>
-
-### v3
-
-<details>
-<summary>yarn instrument:v3</summary>
-
-```console
-$ yarn instrument:v3
-{
-  traceId: '8667843daae9aa29ee07d5853d234ef3',
-  parentId: undefined,
-  name: 'DynamoDB.ListTables',
-  id: 'a0de3f91383e0d71',
-  kind: 2,
-  timestamp: 1652398963098096,
-  duration: 166117,
-  attributes: {
-    'rpc.system': 'aws-api',
-    'rpc.method': 'ListTables',
-    'rpc.service': 'DynamoDB',
-    'db.system': 'dynamodb',
-    'db.operation': 'ListTables',
-    'db.statement': '{}',
-    'aws.region': 'us-west-2',
-    'aws.request.id': 'S7HO96KJSTPJVCCCA6UMB1DU13VV4KQNSO5AEMVJF66Q9ASUAAJG',
-    'http.status_code': 200
-  },
-  status: { code: 0 },
-  events: [],
-  links: []
-}
-```
+![Jaeger Span for AWS SDK for JavaScript](img/jaeger-span.png?raw=true)
 
 </details>
 
-<details>
-<summary>Jaeger Span Screenshot (v3)</summary>
-
-![Jaeger Span for AWS SDK for JavaScript (v3)](img/jaeger-span-v3.png?raw=true)
-
-</details>
+For JS SDK v2, pleas refer to the [v2][v2] branch.
 
 ## Screenshots
 
@@ -140,3 +107,4 @@ $ yarn instrument:v3
 [instrumentation-aws-sdk]: https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk
 [jaegertracing]: https://www.jaegertracing.io
 [jaeger-getting-started]: https://www.jaegertracing.io/docs/latest/getting-started/
+[v2]: https://github.com/trivikr/aws-sdk-js-otel-test/tree/v2
