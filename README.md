@@ -51,22 +51,22 @@ $ node --run instrument
       'service.name': 'test-aws-sdk',
       'telemetry.sdk.language': 'nodejs',
       'telemetry.sdk.name': 'opentelemetry',
-      'telemetry.sdk.version': '1.26.0'
+      'telemetry.sdk.version': '1.28.0'
     }
   },
   instrumentationScope: {
     name: '@opentelemetry/instrumentation-aws-sdk',
-    version: '0.44.0',
+    version: '0.47.0',
     schemaUrl: undefined
   },
-  traceId: 'ff028d034969fc05c6e47ee1eaf2faca',
+  traceId: '5393756927067c7b6ca6dc30439c0c10',
   parentId: undefined,
   traceState: undefined,
   name: 'DynamoDB.ListTables',
-  id: 'ca2f4591b4b974d9',
+  id: 'ae24760f494e5931',
   kind: 2,
-  timestamp: 1729188000802000,
-  duration: 116957.333,
+  timestamp: 1731951374039000,
+  duration: 129575.75,
   attributes: {
     'rpc.system': 'aws-api',
     'rpc.method': 'ListTables',
@@ -74,9 +74,9 @@ $ node --run instrument
     'db.system': 'dynamodb',
     'db.operation': 'ListTables',
     'aws.region': 'us-west-2',
-    'aws.request.id': 'NI9DR2PE921C79HS5U5QSOHM2VVV4KQNSO5AEMVJF66Q9ASUAAJG',
+    'aws.request.id': 'CQPLDQLNFP5AT4GGOMD199FC37VV4KQNSO5AEMVJF66Q9ASUAAJG',
     'http.status_code': 200,
-    'aws.dynamodb.table_count': 20
+    'aws.dynamodb.table_count': 16
   },
   status: { code: 0 },
   events: [],
