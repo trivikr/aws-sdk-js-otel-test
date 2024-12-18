@@ -31,7 +31,9 @@ Complete the following tasks:
     [default]
     region = us-west-2
     ```
-- (Optional) Setup [Jaeger Tracing][jaeger-getting-started]: needs to be running on `localhost` port `16686`.
+- (Optional) Setup [Jaeger Tracing][jaeger-getting-started]:
+  - needs to be running on `localhost` port `16686`.
+  - needs to map the `localhost` port `14268` where traces are written to.
 
 ## Setup
 
